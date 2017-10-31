@@ -26,11 +26,11 @@ registry.lookup('0xa9059cbb')
 
 // Also includes a method for parsing the resulting sig
 // into something more useful for rendering:
-const sig = 'transfer(address,uint256)'
+const sig = 'transferFrom(address,uint256)'
 const parsed = registry.parse(sig)
 /* Parsed value:
    {
-    name :'Transfer',
+    name :'Transfer From',
     args: [
       { type: 'address' },
       { type: 'uint256' }

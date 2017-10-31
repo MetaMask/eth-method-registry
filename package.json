@@ -1,6 +1,6 @@
 {
   "name": "eth-method-registry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module for getting method signature info from an ethereum method signature.",
   "main": "index.js",
   "scripts": {
