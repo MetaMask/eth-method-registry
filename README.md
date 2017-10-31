@@ -1,4 +1,4 @@
-# Eth Method Registry
+# Eth Method Registry [![CircleCI](https://circleci.com/gh/danfinlay/eth-method-registry.svg?style=svg)](https://circleci.com/gh/danfinlay/eth-method-registry)
 
 A javascript library for getting Solidity method data from a four-byte method signature.
 
