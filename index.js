@@ -25,6 +25,8 @@ class MethodRegistry {
   parse (signature) {
     let name = signature.match(/^.+(?=\()/)[0]
     name = name.charAt(0).toUpperCase() + name.slice(1)
+      .split(/(?=[A-Z])/).join(' ')
+
     const args = signature.match(/\(.+\)/)[0].slice(1, -1).split(',')
 
     return {
