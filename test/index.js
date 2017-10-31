@@ -27,3 +27,14 @@ test('parse signature', function (t) {
   t.end()
 })
 
+test('parsing adds spaces to multi words', function (t) {
+  const sig = 'transferFrom(address,uint256)'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Transfer From')
+  t.equal(parsed.args.length, 2)
+  t.equal(parsed.args[0].type, 'address')
+  t.equal(parsed.args[1].type, 'uint256')
+  t.end()
+})
+
