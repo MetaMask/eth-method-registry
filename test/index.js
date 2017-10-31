@@ -15,3 +15,15 @@ test('connecting to main net contract', function (t) {
     t.fail(reason.message)
   })
 })
+
+test('parse signature', function (t) {
+  const sig = 'transfer(address,uint256)'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Transfer')
+  t.equal(parsed.args.length, '2')
+  t.equal(parsed.args[0].type, 'address')
+  t.equal(parsed.args[1].type, 'uint256')
+  t.end()
+})
+
