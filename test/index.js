@@ -27,6 +27,42 @@ test('parse signature', function (t) {
   t.end()
 })
 
+test('parse signature without arguments', function (t) {
+  const sig = 'drain()'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Drain')
+  t.equal(parsed.args.length, 0)
+  t.end()
+})
+
+test('parse $() dollar-sign signature', function (t) {
+  const sig = '$()'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, '$')
+  t.equal(parsed.args.length, 0)
+  t.end()
+})
+
+test('parse _() underscore signature', function (t) {
+  const sig = '_()'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, '_')
+  t.equal(parsed.args.length, 0)
+  t.end()
+})
+
+test('parse () fallback signature', function (t) {
+  const sig = '()'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, '')
+  t.equal(parsed.args.length, 0)
+  t.end()
+})
+
 test('parsing adds spaces to multi words', function (t) {
   const sig = 'transferFrom(address,uint256)'
   const parsed = registry.parse(sig)

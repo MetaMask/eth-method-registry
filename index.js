@@ -23,15 +23,23 @@ class MethodRegistry {
   }
 
   parse (signature) {
-    let name = signature.match(/^.+(?=\()/)[0]
-    name = name.charAt(0).toUpperCase() + name.slice(1)
-      .split(/(?=[A-Z])/).join(' ')
+    let name = signature.match(/^.+(?=\()/)
+    
+    if (name) {
+      name = name[0].charAt(0).toUpperCase() + name[0].slice(1).split(/(?=[A-Z])/).join(' ')
+    } else {
+      name = ''
+    }
 
-    const args = signature.match(/\(.+\)/)[0].slice(1, -1).split(',')
-
+    const match = signature.match(/\(.+\)/)
+    let args = [];
+    if (match) {
+      args = match[0].slice(1, -1).split(',').map((arg) => { return {type: arg}})
+    }
+  
     return {
       name,
-      args: args.map((arg) => { return {type: arg}})
+      args
     }
   }
 
