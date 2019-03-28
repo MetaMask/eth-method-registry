@@ -1,9 +1,7 @@
-declare module 'eth-method-registry' {
+export = MethodRegistry
+declare class MethodRegistry {
+    constructor(opts: object)
 
-    export class MethodRegistry {
-        constructor(opts: object)
-
-        lookup(bytes: string): void
-        parse(signature: string): void
-    }
+    lookup(bytes: string): void
+    parse(signature: string): void
 }
