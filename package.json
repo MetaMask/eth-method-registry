@@ -12,6 +12,7 @@
     "ethjs": "^0.3.0"
   },
   "devDependencies": {
+    "babel-runtime": "^6.26.0",
     "tape": "^4.8.0"
   },
   "directories": {
