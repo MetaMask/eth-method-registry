@@ -23,22 +23,24 @@ class MethodRegistry {
   }
 
   parse (signature) {
-    let name = signature.match(/^.+(?=\()/)
-    
-    if (name) {
-      name = name[0].charAt(0).toUpperCase() + name[0].slice(1).split(/(?=[A-Z])/).join(' ')
+    const rawName = signature.match(new RegExp("^([^)(]*)\\((.*)\\)([^)(]*)$"))
+    let parsedName
+
+    if (rawName) {
+      parsedName = rawName[1].charAt(0).toUpperCase() + rawName[1].slice(1).split(/(?=[A-Z])/).join(' ')
     } else {
-      name = ''
+      parsedName = ''
     }
 
-    const match = signature.match(/\(.+\)/)
+    const match = signature.match(new RegExp(rawName[1] + '\\(+([a-z1-9,()]+)\\)'))
+
     let args = [];
     if (match) {
-      args = match[0].slice(1, -1).split(',').map((arg) => { return {type: arg}})
+      args = match[1].match(/[A-z1-9]+/g).map((arg) => { return {type: arg}})
     }
   
     return {
-      name,
+      name: parsedName,
       args
     }
   }

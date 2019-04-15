@@ -74,3 +74,57 @@ test('parsing adds spaces to multi words', function (t) {
   t.end()
 })
 
+test('parse signature that includes a tuple as the first param', function (t) {
+  const sig = 'method((address,uint256,bytes),uint256,bytes)'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Method')
+  t.equal(parsed.args.length, 5)
+  t.equal(parsed.args[0].type, 'address')
+  t.equal(parsed.args[1].type, 'uint256')
+  t.equal(parsed.args[2].type, 'bytes')
+  t.equal(parsed.args[3].type, 'uint256')
+  t.equal(parsed.args[4].type, 'bytes')
+  t.end()
+})
+
+test('parse signature that includes a tuple of tuples', function (t) {
+  const sig = 'method(((address,uint256),(address,uint256)))'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Method')
+  t.equal(parsed.args.length, 4)
+  t.equal(parsed.args[0].type, 'address')
+  t.equal(parsed.args[1].type, 'uint256')
+  t.equal(parsed.args[2].type, 'address')
+  t.equal(parsed.args[3].type, 'uint256')
+  t.end()
+})
+
+test('parse signature that includes a tuple as a middle param', function (t) {
+  const sig = 'method(uint256,(address,uint256,bytes),bytes)'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Method')
+  t.equal(parsed.args.length, 5)
+  t.equal(parsed.args[0].type, 'uint256')
+  t.equal(parsed.args[1].type, 'address')
+  t.equal(parsed.args[2].type, 'uint256')
+  t.equal(parsed.args[3].type, 'bytes')
+  t.equal(parsed.args[4].type, 'bytes')
+  t.end()
+})
+
+test('parse signature that includes a tuple as the last param', function (t) {
+  const sig = 'method(uint256,bytes,(address,uint256,bytes))'
+  const parsed = registry.parse(sig)
+
+  t.equal(parsed.name, 'Method')
+  t.equal(parsed.args.length, 5)
+  t.equal(parsed.args[0].type, 'uint256')
+  t.equal(parsed.args[1].type, 'bytes')
+  t.equal(parsed.args[2].type, 'address')
+  t.equal(parsed.args[3].type, 'uint256')
+  t.equal(parsed.args[4].type, 'bytes')
+  t.end()
+})
