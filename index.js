@@ -6,7 +6,7 @@ class MethodRegistry {
 
   constructor (opts = {}) {
     this.provider = opts.provider ||
-      new Eth.HttpProvider('https://mainnet.infura.io/eth-contract-registry')
+      new Eth.HttpProvider('https://api.infura.io/v1/jsonrpc/mainnet')
     this.eth = new Eth(this.provider)
     const address = registryMap[opts.network || '1']
 
