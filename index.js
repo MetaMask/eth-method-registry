@@ -32,7 +32,7 @@ class MethodRegistry {
       parsedName = ''
     }
 
-    const match = signature.match(new RegExp(rawName[1] + '\\(+([a-z1-9,()]+)\\)'))
+    const match = signature.match(new RegExp(rawName[1] + '\\(+([a-z1-9,()\\[\\]]+)\\)'))
 
     let args = [];
     if (match) {
