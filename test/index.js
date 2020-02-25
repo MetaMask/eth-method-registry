@@ -1,7 +1,7 @@
 const test = require('tape')
 const MethodRegistry = require('../')
 const Eth = require('ethjs')
-const provider = new Eth.HttpProvider('https://mainnet.infura.io')
+const provider = new Eth.HttpProvider('https://api.infura.io/v1/jsonrpc/mainnet')
 const registry = new MethodRegistry({ provider })
 
 test('connecting to main net contract', function (t) {
