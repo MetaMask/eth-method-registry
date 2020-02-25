@@ -8,7 +8,7 @@ Currently uses [the parity on-chain method registry](https://www.bokconsulting.c
 
 With Node.js Installed:
 
-`npm install eth-method-registry -S`
+`yarn install eth-method-registry -S`
 
 ## Usage
 
