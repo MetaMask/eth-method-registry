@@ -15,7 +15,7 @@ With Node.js Installed:
 ```javascript
 const MethodRegistry = require('eth-method-registry')
 const Eth = require('ethjs')
-const provider = new Eth.HttpProvider('https://mainnet.infura.io')
+const provider = new Eth.HttpProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID')
 const registry = new MethodRegistry({ provider })
 
 // Uses promises, pass the 4byte prefix to the lookup method:
