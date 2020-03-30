@@ -4,6 +4,7 @@
   "description": "A module for getting method signature info from an ethereum method signature.",
   "main": "index.js",
   "scripts": {
+    "lint": "echo 'No lint script'",
     "test": "node test"
   },
   "author": "Dan Finlay <dan@danfinlay.com>",
