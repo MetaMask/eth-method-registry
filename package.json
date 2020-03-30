@@ -4,7 +4,6 @@
   "description": "A module for getting method signature info from an ethereum method signature.",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'No build script'",
     "lint": "echo 'No lint script'",
     "test": "node test"
   },
