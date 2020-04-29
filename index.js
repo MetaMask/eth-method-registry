@@ -5,8 +5,10 @@ const abi = require('./abi')
 class MethodRegistry {
 
   constructor (opts = {}) {
-    this.provider = opts.provider ||
-      new Eth.HttpProvider('https://mainnet.infura.io/eth-contract-registry')
+    if (!opts.provider) {
+      throw new Error("Missing required 'provider' option")
+    }
+    this.provider = opts.provider
     this.eth = new Eth(this.provider)
     const address = registryMap[opts.network || '1']
 
