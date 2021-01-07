@@ -1,7 +1,8 @@
 declare class MethodRegistry {
-    constructor(opts: object)
+  constructor(opts: Record<string, unknown>)
 
-    lookup(bytes: string): void
-    parse(signature: string): void
+  lookup(bytes: string): void
+
+  parse(signature: string): void
 }
-export = MethodRegistry
+export = MethodRegistry;
