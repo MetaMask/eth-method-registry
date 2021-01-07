@@ -41,5 +41,11 @@
   "bugs": {
     "url": "https://github.com/danfinlay/eth-method-registry/issues"
   },
-  "homepage": "https://github.com/danfinlay/eth-method-registry#readme"
+  "homepage": "https://github.com/danfinlay/eth-method-registry#readme",
+  "files": [
+    "registry-map.json",
+    "abi.json",
+    "index.js",
+    "index.d.ts"
+  ]
 }
