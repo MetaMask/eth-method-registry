@@ -7,30 +7,24 @@ module.exports = {
     '@metamask/eslint-config/config/nodejs',
     '@metamask/eslint-config/config/typescript',
   ],
-  plugins: [
-    'json',
-  ],
-  overrides: [{
-    files: ['*.js', '*.json'],
-    parserOptions: {
-      sourceType: 'script',
+  plugins: ['json'],
+  overrides: [
+    {
+      files: ['*.js', '*.json'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+      rules: {
+        '@typescript-eslint/no-require-imports': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+      },
     },
-    rules: {
-      '@typescript-eslint/no-require-imports': 'off',
-      '@typescript-eslint/no-var-requires': 'off',
+    {
+      files: ['index.d.ts'],
+      rules: {
+        'import/unambiguous': 'off',
+      },
     },
-  },
-  {
-    files: ['index.d.ts'],
-    rules: {
-      'import/unambiguous': 'off',
-    },
-  },
   ],
-  ignorePatterns: [
-    '!.eslintrc.js',
-    'coverage/',
-    'dist/',
-    'node_modules/',
-  ],
+  ignorePatterns: ['!.eslintrc.js', 'coverage/', 'dist/', 'node_modules/'],
 };
