@@ -19,12 +19,6 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
       },
     },
-    {
-      files: ['index.d.ts'],
-      rules: {
-        'import/unambiguous': 'off',
-      },
-    },
   ],
   ignorePatterns: ['!.eslintrc.js', 'coverage/', 'dist/', 'node_modules/'],
 };
