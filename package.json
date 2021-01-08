@@ -7,6 +7,7 @@
     "build": "tsc --project .",
     "lint": "eslint . --ext ts,js,json",
     "lint:fix": "yarn lint --fix",
+    "prepublishOnly": "yarn test",
     "test": "yarn build && node test"
   },
   "author": "Dan Finlay <dan@danfinlay.com>",
@@ -46,6 +47,5 @@
   "homepage": "https://github.com/danfinlay/eth-method-registry#readme",
   "files": [
     "dist"
-  ],
-  "prepublishOnly": "yarn test"
+  ]
 }
