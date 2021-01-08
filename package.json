@@ -46,5 +46,6 @@
   "homepage": "https://github.com/danfinlay/eth-method-registry#readme",
   "files": [
     "dist"
-  ]
+  ],
+  "prepublishOnly": "yarn test"
 }
