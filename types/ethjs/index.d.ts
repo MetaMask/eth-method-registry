@@ -8,7 +8,7 @@ declare module 'ethjs' {
     at (address: string): DeployedRegistryContract;
   }
   interface DeployedRegistryContract {
-    entries (bytes: Uint8Array): unknown[];
+    entries (bytes: string): string[];
   }
   export=Eth;
 }

@@ -13,7 +13,7 @@ interface Provider {
 }
 
 interface DeployedRegistryContract {
-  entries (bytes: Uint8Array): unknown[];
+  entries (bytes: string): string[];
 }
 
 export class MethodRegistry {
@@ -38,9 +38,15 @@ export class MethodRegistry {
     this.registry = this.eth.contract(abi as any).at(address);
   }
 
-  async lookup(bytes: any) {
-    const result = await this.registry.entries(bytes);
-    return result[0];
+  /**
+ * @param bytes - The `0x`-prefixed hexadecimal string representing the four-byte signature of the contract method to lookup.
+ */
+  async lookup(bytes: string) {
+    const result: string[] | undefined = await this.registry.entries(bytes);
+    if (result) {
+      return result[0];
+    }
+    return undefined;
   }
 
   parse(signature: string) {
