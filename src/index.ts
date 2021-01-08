@@ -60,7 +60,7 @@ export class MethodRegistry {
     }
 
     if (rawName) {
-      const match = signature.match(new RegExp(`${rawName[1]}\\(+([a-z1-9,()]+)\\)`, 'u'));
+      const match = signature.match(new RegExp(`${rawName[1]}\\(+([a-z1-9,()\\[\\]]+)\\)`, 'u'));
       let matches;
       let args: { type: string }[] = [];
       if (match) {
