@@ -2,16 +2,17 @@
   "name": "eth-method-registry",
   "version": "1.2.0",
   "description": "A module for getting method signature info from an ethereum method signature.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc --project .",
     "lint": "eslint . --ext js,json",
     "lint:fix": "yarn lint --fix",
-    "test": "node test"
+    "test": "yarn build && node test"
   },
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "dependencies": {
-    "ethjs": "^0.3.0"
+    "ethjs": "^0.4.0"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^4.0.0",
@@ -43,9 +44,6 @@
   },
   "homepage": "https://github.com/danfinlay/eth-method-registry#readme",
   "files": [
-    "registry-map.json",
-    "abi.json",
-    "index.js",
-    "index.d.ts"
+    "dist"
   ]
 }

@@ -1,6 +1,6 @@
 const test = require('tape');
 const Eth = require('ethjs');
-const MethodRegistry = require('..');
+const { MethodRegistry } = require('../dist');
 
 const provider = new Eth.HttpProvider('https://api.infura.io/v1/jsonrpc/mainnet');
 const registry = new MethodRegistry({ provider });

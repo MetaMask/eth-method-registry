@@ -19,7 +19,14 @@ module.exports = {
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/no-var-requires': 'off',
     },
-  }],
+  },
+  {
+    files: ['dependencies.d.ts'],
+    rules: {
+      'import/unambiguous': 'off',
+    },
+  },
+  ],
   ignorePatterns: [
     '!.eslintrc.js',
     'coverage/',
