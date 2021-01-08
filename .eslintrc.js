@@ -20,7 +20,7 @@ module.exports = {
       },
     },
     {
-      files: ['index.d.ts'],
+      files: ['*.d.ts'],
       rules: {
         'import/unambiguous': 'off',
       },
