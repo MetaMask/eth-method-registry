@@ -21,7 +21,7 @@ module.exports = {
     },
   },
   {
-    files: ['dependencies.d.ts'],
+    files: ['index.d.ts'],
     rules: {
       'import/unambiguous': 'off',
     },

@@ -11,7 +11,7 @@
     "outDir": "dist",
     "typeRoots": [
       "./node_modules/@types",
-      "src/dependencies.d.ts"
+      "./types"
     ] 
   },
   "include": [
