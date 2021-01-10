@@ -7,7 +7,7 @@ interface HttpProvider {
   timeout: number;
 }
 
-interface Provider {
+interface MethodRegistryArgs {
   network: string;
   provider: HttpProvider;
 }
@@ -23,7 +23,7 @@ export class MethodRegistry {
 
   registry: DeployedRegistryContract;
 
-  constructor(opts: Provider) {
+  constructor(opts: MethodRegistryArgs) {
     if (!opts.provider) {
       throw new Error("Missing required 'provider' option");
     }
