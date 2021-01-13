@@ -1,8 +1,14 @@
 const test = require('tape');
 const Eth = require('ethjs');
+
+const { INFURA_PROJECT_ID } = require('rc')('infura', {
+  // eslint-disable-next-line node/no-process-env
+  INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
+});
+
 const { MethodRegistry } = require('../dist');
 
-const provider = new Eth.HttpProvider('https://api.infura.io/v1/jsonrpc/mainnet');
+const provider = new Eth.HttpProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`);
 const registry = new MethodRegistry({ provider });
 
 test('connecting to main net contract', function (t) {

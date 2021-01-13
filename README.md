@@ -39,3 +39,7 @@ const parsed = registry.parse(sig)
 */
 ```
 
+## Development
+
+The unit tests of this package run against Infura's v3 API.
+After cloning this repository, run `cp .infurarc.template .infurarc` and add your Infura project ID to the file.
