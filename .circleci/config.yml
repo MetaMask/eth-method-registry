@@ -54,6 +54,10 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Create rc file
+          command: |
+            .circleci/scripts/generate-rc-file.sh
+      - run:
           name: Unit tests
           command: yarn test
 

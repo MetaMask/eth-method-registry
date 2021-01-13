@@ -1,10 +1,11 @@
 const test = require('tape');
 const Eth = require('ethjs');
-const { MethodRegistry } = require('../dist');
 
 const { INFURA_PROJECT_ID } = require('rc')('infura', {
   INFURA_PROJECT_ID: null,
-})
+});
+
+const { MethodRegistry } = require('../dist');
 
 const provider = new Eth.HttpProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`);
 const registry = new MethodRegistry({ provider });
