@@ -2,7 +2,8 @@ const test = require('tape');
 const Eth = require('ethjs');
 
 const { INFURA_PROJECT_ID } = require('rc')('infura', {
-  INFURA_PROJECT_ID: null,
+  // eslint-disable-next-line node/no-process-env
+  INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
 });
 
 const { MethodRegistry } = require('../dist');
