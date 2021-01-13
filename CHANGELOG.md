@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2021-01-13
+
+### Changed
+
+- Update `2.0.0` changelog entry to reflect missing breaking
+
 ## [2.0.0] - 2021-01-10
 
 ### Added
@@ -16,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **(SEMVER-MAJOR)** Require `provider` argument ([#15](https://github.com/MetaMask/eth-method-registry/pull/15))
+- **(SEMVER-MAJOR)** Move from default to named `MethodRegistry` export ([#21](https://github.com/MetaMask/eth-method-registry/pull/21))
 - Migrate to TypeScript ([#21](https://github.com/MetaMask/eth-method-registry/pull/21))
 
 ## [1.2.0] - 2019-04-15
