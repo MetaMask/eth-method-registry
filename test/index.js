@@ -2,7 +2,11 @@ const test = require('tape');
 const Eth = require('ethjs');
 const { MethodRegistry } = require('../dist');
 
-const provider = new Eth.HttpProvider('https://api.infura.io/v1/jsonrpc/mainnet');
+const { INFURA_PROJECT_ID } = require('rc')('infura', {
+  INFURA_PROJECT_ID: null,
+})
+
+const provider = new Eth.HttpProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`);
 const registry = new MethodRegistry({ provider });
 
 test('connecting to main net contract', function (t) {
