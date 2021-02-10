@@ -14,15 +14,15 @@ With Node.js Installed:
 
 ```javascript
 const { MethodRegistry } = require('eth-method-registry')
-const Eth = require('ethjs')
+const { ethers } = require('ethers');
 
-const provider = new Eth.HttpProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID')
+const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID')
 const registry = new MethodRegistry({ provider })
 
 // Uses promises, pass the 4byte prefix to the lookup method:
 registry.lookup('0xa9059cbb')
   .then((result) => {
-   console.log(result) // prints 'transfer(address,uint256)'
+    console.log(result) // prints 'transfer(address,uint256)'
   })
 
 // Also includes a method for parsing the resulting sig
