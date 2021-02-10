@@ -13,16 +13,17 @@ With Node.js Installed:
 ## Usage
 
 ```javascript
-const MethodRegistry = require('eth-method-registry')
+const { MethodRegistry } = require('eth-method-registry')
 const Eth = require('ethjs')
+
 const provider = new Eth.HttpProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID')
 const registry = new MethodRegistry({ provider })
 
 // Uses promises, pass the 4byte prefix to the lookup method:
 registry.lookup('0xa9059cbb')
-.then((result) => {
-  assert.equal(result, 'transfer(address,uint256)', 'finds correct signature')
-})
+  .then((result) => {
+   console.log(result) // prints 'transfer(address,uint256)'
+  })
 
 // Also includes a method for parsing the resulting sig
 // into something more useful for rendering:
