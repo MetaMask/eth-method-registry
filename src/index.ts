@@ -17,11 +17,11 @@ interface DeployedRegistryContract {
 }
 
 export class MethodRegistry {
-  eth: Eth;
+  private eth: Eth;
 
-  provider: HttpProvider;
+  private provider: HttpProvider;
 
-  registry: DeployedRegistryContract;
+  private registry: DeployedRegistryContract;
 
   constructor(opts: MethodRegistryArgs) {
     if (!opts.provider) {
