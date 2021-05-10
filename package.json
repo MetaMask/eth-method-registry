@@ -16,9 +16,11 @@
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "dependencies": {
-    "ethjs": "^0.4.0"
+    "@ethersproject/abstract-provider": "^5.0.9",
+    "@ethersproject/contracts": "^5.0.0"
   },
   "devDependencies": {
+    "@ethersproject/providers": "^5.0.22",
     "@metamask/eslint-config": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",

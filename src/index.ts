@@ -1,50 +1,40 @@
-import Eth from 'ethjs';
-import registryMap from './registry-map.json';
-import abi from './abi.json';
+import type { Provider } from '@ethersproject/abstract-provider';
+import { Contract } from '@ethersproject/contracts';
 
-interface HttpProvider {
-  host: string;
-  timeout: number;
-}
+import abi from './abi.json';
+import registryMap from './registry-map.json';
 
 interface MethodRegistryArgs {
   network: string;
-  provider: HttpProvider;
-}
-
-interface DeployedRegistryContract {
-  entries (bytes: string): string[];
+  provider: Provider;
 }
 
 export class MethodRegistry {
-  eth: Eth;
+  provider: Provider;
 
-  provider: HttpProvider;
-
-  registry: DeployedRegistryContract;
+  registry: Contract;
 
   constructor(opts: MethodRegistryArgs) {
     if (!opts.provider) {
       throw new Error("Missing required 'provider' option");
     }
     this.provider = opts.provider;
-    this.eth = new Eth(this.provider);
     const address = (registryMap as Record<string, string>)[opts.network || '1'];
 
     if (!address) {
       throw new Error('No method registry found on the requested network.');
     }
 
-    this.registry = this.eth.contract(abi as any).at(address);
+    this.registry = new Contract(address, abi, this.provider);
   }
 
   /**
  * @param bytes - The `0x`-prefixed hexadecimal string representing the four-byte signature of the contract method to lookup.
  */
   async lookup(bytes: string) {
-    const result: string[] | undefined = await this.registry.entries(bytes);
+    const result: string | undefined = await this.registry.entries(bytes);
     if (result) {
-      return result[0];
+      return result;
     }
     return undefined;
   }

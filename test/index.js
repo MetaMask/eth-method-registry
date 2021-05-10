@@ -1,5 +1,5 @@
 const test = require('tape');
-const Eth = require('ethjs');
+const { JsonRpcProvider } = require('@ethersproject/providers');
 
 const { INFURA_PROJECT_ID } = require('rc')('infura', {
   // eslint-disable-next-line node/no-process-env
@@ -8,7 +8,7 @@ const { INFURA_PROJECT_ID } = require('rc')('infura', {
 
 const { MethodRegistry } = require('../dist');
 
-const provider = new Eth.HttpProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`);
+const provider = new JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`, 1);
 const registry = new MethodRegistry({ provider });
 
 test('connecting to main net contract', function (t) {
