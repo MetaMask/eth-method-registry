@@ -1,6 +1,6 @@
 # Eth Method Registry [![CircleCI](https://circleci.com/gh/danfinlay/eth-method-registry.svg?style=svg)](https://circleci.com/gh/danfinlay/eth-method-registry)
 
-A javascript library for getting Solidity method data from a four-byte method signature.
+A  javascript library for getting Solidity method data from a four-byte method signature.
 
 Currently uses [the parity on-chain method registry](https://www.bokconsulting.com.au/blog/a-quick-look-at-paritys-signature-registry-contract/), but eventually I am interested in adding various parallel methods, whatever works and returns a valid response!
 
