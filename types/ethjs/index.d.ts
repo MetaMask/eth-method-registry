@@ -1,4 +1,4 @@
-declare module 'ethjs' {
+declare module '@metamask/ethjs' {
   class Eth {
     constructor(provider: any);
 

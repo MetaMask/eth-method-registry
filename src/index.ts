@@ -1,4 +1,4 @@
-import Eth from 'ethjs';
+import Eth from '@metamask/ethjs';
 import registryMap from './registry-map.json';
 import abi from './abi.json';
 

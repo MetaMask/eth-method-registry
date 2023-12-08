@@ -14,7 +14,7 @@ With Node.js Installed:
 
 ```javascript
 const { MethodRegistry } = require('eth-method-registry')
-const Eth = require('ethjs')
+const Eth = require('@metamask/ethjs')
 
 const provider = new Eth.HttpProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID')
 const registry = new MethodRegistry({ provider })

@@ -16,7 +16,7 @@
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "dependencies": {
-    "ethjs": "^0.4.0"
+    "@metamask/ethjs": "^0.5.0"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^4.0.0",
