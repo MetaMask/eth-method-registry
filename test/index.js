@@ -1,27 +1,10 @@
 const test = require('tape');
-const Eth = require('ethjs');
-
-const { INFURA_PROJECT_ID } = require('rc')('infura', {
-  // eslint-disable-next-line node/no-process-env
-  INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
-});
+const Ganache = require('ganache');
 
 const { MethodRegistry } = require('../dist');
 
-const provider = new Eth.HttpProvider(`https://mainnet.infura.io/v3/${INFURA_PROJECT_ID}`);
+const { provider } = Ganache.server();
 const registry = new MethodRegistry({ provider });
-
-test('connecting to main net contract', function (t) {
-  t.plan(1);
-
-  registry.lookup('0xa9059cbb')
-    .then((result) => {
-      t.equal(result, 'transfer(address,uint256)', 'finds correct value');
-    })
-    .catch((reason) => {
-      t.fail(reason.message);
-    });
-});
 
 test('parse signature', function (t) {
   const sig = 'transfer(address,uint256)';
