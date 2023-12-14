@@ -6,10 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.1] - 2021-01-13
-### Changed
-- Update `2.0.0` changelog entry to reflect missing breaking
-
 ## [2.0.0] - 2021-01-10
 ### Added
 - Support method signatures with array arguments ([#22](https://github.com/MetaMask/eth-method-registry/pull/22))
@@ -23,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Support method signatures with tuple arguments ([#6](https://github.com/MetaMask/eth-method-registry/pull/6))
 
-[Unreleased]: https://github.com/MetaMask/eth-method-registry/compare/v2.0.1...HEAD
-[2.0.1]: https://github.com/MetaMask/eth-method-registry/compare/v2.0.0...v2.0.1
+[Unreleased]: https://github.com/MetaMask/eth-method-registry/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/MetaMask/eth-method-registry/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/MetaMask/eth-method-registry/releases/tag/v1.2.0
