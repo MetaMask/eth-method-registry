@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0]
+### Changed
+- **BREAKING**: These `MethodRegistry` properties are now parked as private: `eth`, `provider`, `registry` ([#31](https://github.com/MetaMask/eth-method-registry/pull/31))
+- Update from `ethjs@^0.4.0` to `@metamask/ethjs@^0.5.0` ([#50](https://github.com/MetaMask/eth-method-registry/pull/50))
+
+### Fixed
+- Fix constructor options interface name ([#25](https://github.com/MetaMask/eth-method-registry/pull/25))
+
 ## [2.0.0] - 2021-01-10
 ### Added
 - Support method signatures with array arguments ([#22](https://github.com/MetaMask/eth-method-registry/pull/22))
@@ -19,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Support method signatures with tuple arguments ([#6](https://github.com/MetaMask/eth-method-registry/pull/6))
 
-[Unreleased]: https://github.com/MetaMask/eth-method-registry/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/eth-method-registry/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/MetaMask/eth-method-registry/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/MetaMask/eth-method-registry/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/MetaMask/eth-method-registry/releases/tag/v1.2.0
