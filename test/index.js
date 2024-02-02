@@ -6,6 +6,16 @@ const { MethodRegistry } = require('../dist');
 const { provider } = Ganache.server();
 const registry = new MethodRegistry({ provider });
 
+test('lookup on non-existing registry', async function (t) {
+  const result = await registry.lookup('0xdeadbeef');
+  t.equal(result, '');
+  t.end();
+});
+
+// TODO
+// test('lookup existing method', async function (t) { //...
+// test('lookup non-existing method', async function (t) { //...
+
 test('parse signature', function (t) {
   const sig = 'transfer(address,uint256)';
   const parsed = registry.parse(sig);
