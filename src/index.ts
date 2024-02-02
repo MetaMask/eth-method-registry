@@ -17,25 +17,21 @@ interface DeployedRegistryContract {
 }
 
 export class MethodRegistry {
-  private eth: Eth;
-
-  private provider: HttpProvider;
-
   private registry: DeployedRegistryContract;
 
   constructor(opts: MethodRegistryArgs) {
     if (!opts.provider) {
       throw new Error("Missing required 'provider' option");
     }
-    this.provider = opts.provider;
-    this.eth = new Eth(this.provider);
+
     const address = (registryMap as Record<string, string>)[opts.network || '1'];
 
     if (!address) {
       throw new Error('No method registry found on the requested network.');
     }
 
-    this.registry = this.eth.contract(abi as any).at(address);
+    const eth = new Eth(opts.provider);
+    this.registry = eth.contract(abi as any).at(address);
   }
 
   /**
