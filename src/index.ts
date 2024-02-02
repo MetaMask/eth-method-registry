@@ -1,4 +1,5 @@
 import Eth from '@metamask/ethjs';
+import type { DeployedRegistryContract } from '@metamask/ethjs-types';
 import registryMap from './registry-map.json';
 import abi from './abi.json';
 
@@ -10,10 +11,6 @@ interface HttpProvider {
 interface MethodRegistryArgs {
   network: string;
   provider: HttpProvider;
-}
-
-interface DeployedRegistryContract {
-  entries (bytes: string): string[];
 }
 
 export class MethodRegistry {
@@ -38,7 +35,7 @@ export class MethodRegistry {
  * @param bytes - The `0x`-prefixed hexadecimal string representing the four-byte signature of the contract method to lookup.
  */
   async lookup(bytes: string) {
-    const result: string[] | undefined = await this.registry.entries(bytes);
+    const result = await this.registry.entries(bytes);
     if (result) {
       return result[0];
     }
