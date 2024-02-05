@@ -54,7 +54,7 @@
   resolved "https://registry.yarnpkg.com/@metamask/eslint-config/-/eslint-config-4.1.0.tgz#ace2357af2d9c7d04da40a337fc7f4a81a048921"
   integrity sha512-oc4ONdFB1h2yxBebVj4ACYzGzArB8ZQKiFVNCDlYiTCyeQ/GR4+EUwg0KvlO33LlXCRbAhO3CX0nChbvIB8hEw==
 
-"@metamask/ethjs-contract@^0.3.3":
+"@metamask/ethjs-contract@^0.3.4":
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/@metamask/ethjs-contract/-/ethjs-contract-0.3.4.tgz#2451c31ca3a87b7e3c4c79cff7760abe15c87bcf"
   integrity sha512-QnHkelS0BzMXBqgs+ifq+UIV+OvU8Y3F3kDbCUzpuNq4oxkS592DfZaxWzRc3IbjziMcs2VfJDIYRg2ra0wq4w==
@@ -83,14 +83,7 @@
     number-to-bn "1.7.0"
     strip-hex-prefix "1.0.0"
 
-"@metamask/ethjs-provider-http@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@metamask/ethjs-provider-http/-/ethjs-provider-http-0.2.0.tgz#a0480e9700c8083d4b9082d88b3a41f6bd8ab89f"
-  integrity sha512-th0bsA+9z/xGKCGLtnZAlt/ReYB8m9YL9bUW8eAZ+qhrrsJnMvlMDLLBcA95mCVhBYNI9VMMYQNCRC1YMg0tUA==
-  dependencies:
-    xhr2 "0.2.1"
-
-"@metamask/ethjs-query@^0.5.2":
+"@metamask/ethjs-query@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@metamask/ethjs-query/-/ethjs-query-0.5.3.tgz#491a99668d2093fe945ec74f8bec3b75bfdaec2a"
   integrity sha512-hSttg1b3CNzSiixFJjHc1B0JEbMag7RpGwUqReE3SDXfVQJvS8qR3GQhaI3nhMrD8nvXThxYPBxC5TLbGRqdTg==
@@ -107,14 +100,6 @@
   dependencies:
     promise-to-callback "^1.0.0"
 
-"@metamask/ethjs-unit@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@metamask/ethjs-unit/-/ethjs-unit-0.2.1.tgz#168d93d11ff6381c35fb44915252dbb425ebe4dd"
-  integrity sha512-4wjjaXN/yIHeZDWuExoZ/fapL9vP6+mOZJTuqsresx35zf2Rh0IAM5hbr54bhHY+9TFejCms2vTiIWatK0TzYw==
-  dependencies:
-    bn.js "4.11.6"
-    number-to-bn "1.7.0"
-
 "@metamask/ethjs-util@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@metamask/ethjs-util/-/ethjs-util-0.2.0.tgz#4c39c772e69512d527a3bd54a80a0b08565b5983"
@@ -122,22 +107,6 @@
   dependencies:
     is-hex-prefixed "1.0.0"
     strip-hex-prefix "1.0.0"
-
-"@metamask/ethjs@^0.5.0":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@metamask/ethjs/-/ethjs-0.5.1.tgz#1adc385ac4d988b610c1fbce18b82b5d90e0ca59"
-  integrity sha512-sMjX+ET6K8AFojxZNbm4wZ2yHdKm6Ubv3QhwI3YtLcr9XqhopIYvCeK/KKaBqd0CCsp9GELAm7tIcqvZJcfTRA==
-  dependencies:
-    "@metamask/ethjs-contract" "^0.3.3"
-    "@metamask/ethjs-filter" "^0.2.0"
-    "@metamask/ethjs-provider-http" "^0.2.0"
-    "@metamask/ethjs-query" "^0.5.2"
-    "@metamask/ethjs-unit" "^0.2.1"
-    "@metamask/ethjs-util" "^0.2.0"
-    bn.js "4.11.6"
-    ethjs-abi "0.2.1"
-    js-sha3 "^0.9.2"
-    number-to-bn "1.7.0"
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
@@ -911,7 +880,7 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-ethjs-abi@0.2.1, ethjs-abi@^0.2.0:
+ethjs-abi@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ethjs-abi/-/ethjs-abi-0.2.1.tgz#e0a7a93a7e81163a94477bad56ede524ab6de533"
   integrity sha1-4KepOn6BFjqUR3utVu3lJKtt5TM=
@@ -2255,11 +2224,6 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
-
-xhr2@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/xhr2/-/xhr2-0.2.1.tgz#4e73adc4f9cfec9cbd2157f73efdce3a5f108a93"
-  integrity sha512-sID0rrVCqkVNUn8t6xuv9+6FViXjUVXq8H5rWOH2rz9fDNQEd4g0EA2XlcEdJXRz5BMEn4O1pJFdT+z4YHhoWw==
 
 y18n@^5.0.5:
   version "5.0.8"

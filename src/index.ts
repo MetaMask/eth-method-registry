@@ -1,4 +1,5 @@
-import Eth from '@metamask/ethjs';
+import Eth from '@metamask/ethjs-query';
+import EthContract from '@metamask/ethjs-contract';
 import type { DeployedRegistryContract } from '@metamask/ethjs-types';
 import registryMap from './registry-map.json';
 import abi from './abi.json';
@@ -28,7 +29,8 @@ export class MethodRegistry {
     }
 
     const eth = new Eth(opts.provider);
-    this.registry = eth.contract(abi as any).at(address);
+    const contract = EthContract(eth);
+    this.registry = contract(abi as any).at(address);
   }
 
   /**

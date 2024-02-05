@@ -6,13 +6,16 @@ declare module '@metamask/ethjs-types' {
     entries (bytes: string): Promise<string[]>;
   }
 }
-declare module '@metamask/ethjs' {
-  import type { RegistryContract } from '@metamask/ethjs-types';
-
+declare module '@metamask/ethjs-query' {
   class Eth {
     constructor(provider: any);
-
-    contract(abi: Record<string, unknown>): RegistryContract;
   }
   export=Eth;
+}
+declare module '@metamask/ethjs-contract' {
+  import Eth from '@metamask/ethjs-query';
+  import { RegistryContract } from '@metamask/ethjs-types';
+
+  function EthContract(query: Eth): (abi: Record<string, unknown>) => RegistryContract;
+  export=EthContract;
 }
