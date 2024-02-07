@@ -16,15 +16,15 @@
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
   "dependencies": {
-    "@metamask/ethjs-contract": "^0.3.4",
-    "@metamask/ethjs-query": "^0.5.3"
+    "@metamask/ethjs-contract": "^0.4.1",
+    "@metamask/ethjs-query": "^0.7.1"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.0.0",
     "@metamask/eslint-config": "^4.0.0",
     "@metamask/auto-changelog": "^2.6.1",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
-    "babel-runtime": "^6.26.0",
     "eslint": "^7.7.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-json": "^2.1.2",
@@ -34,6 +34,9 @@
     "rc": "^1.2.8",
     "tape": "^5.1.1",
     "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "^7.0.0"
   },
   "directories": {
     "test": "test"
